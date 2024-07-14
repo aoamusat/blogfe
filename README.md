@@ -17,6 +17,15 @@ $ npm run start
 $ npm run generate
 ```
 
+### Configuration
+#### 1. Environment Variables
+Copy the .env.example file to .env and fill in the necessary environment variables:
+```bash
+cp .env.example .env
+```
+Edit the .env file to set up your API base url
+
+
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
 
 ## Special Directories
