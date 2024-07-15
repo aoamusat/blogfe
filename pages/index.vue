@@ -1,7 +1,7 @@
 <template>
   <section class="text-gray-600 body-font overflow-hidden">
     <PageHeader />
-    <div class="container px-40 py-24 mx-auto">
+    <div class="container px-4 py-24 mx-auto">
       <p v-if="$fetchState.pending">Fetching posts...</p>
       <p v-else-if="$fetchState.error">
         An error occurred while fetching posts :(

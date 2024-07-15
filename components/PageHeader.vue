@@ -31,28 +31,31 @@
         <NuxtLink to="/profile"
           ><a class="mr-5 hover:text-gray-900">My Profile</a></NuxtLink
         >
-        <NuxtLink to="/features"
-          ><a class="mr-5 hover:text-gray-900">Features</a></NuxtLink
-        >
-        <NuxtLink to="/support"
-          ><a class="mr-5 hover:text-gray-900">Support</a></NuxtLink
-        >
       </nav>
       <button
+        v-if="this.$auth.loggedIn"
         class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
       >
-        Login
-        <svg
-          fill="none"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          class="w-4 h-4 ml-1"
-          viewBox="0 0 24 24"
-        >
-          <path d="M5 12h14M12 5l7 7-7 7"></path>
-        </svg>
+        <NuxtLink to="/logout">
+          Logout
+          <svg
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            class="w-4 h-4 ml-1"
+            viewBox="0 0 24 24"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </NuxtLink>
+      </button>
+      <button
+        v-if="!this.$auth.loggedIn"
+        class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
+      >
+        <NuxtLink to="/login"> Login </NuxtLink>
       </button>
     </div>
   </header>

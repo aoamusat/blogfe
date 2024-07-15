@@ -26,6 +26,11 @@
       >
         Create an account
       </h2>
+      <Notification
+        v-if="error"
+        :text="error"
+        className="text-red-900 bg-red-300"
+      />
     </div>
 
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
@@ -109,7 +114,9 @@
 </template>
 
 <script>
+import Notification from "../components/Notification.vue";
 export default {
+  auth: false,
   data() {
     return {
       name: "",
@@ -137,7 +144,9 @@ export default {
 
         this.$router.push("/");
       } catch (e) {
-        this.error = e.response.data.message;
+        this.error =
+          e.response?.data?.message ||
+          "An error occurred while trying to register";
       }
     },
   },
